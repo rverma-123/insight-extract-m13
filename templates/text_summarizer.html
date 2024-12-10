@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarizer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+<div class="container-fluid d-flex align-items-center vh-100">
+    <!-- Left Section -->
+    <div class="split-left d-flex flex-column justify-content-center align-items-center p-4">
+        <h1 class="font-weight-bold" style="font-family: 'Georgia', serif;">INSIGHT EXTRACT</h1>
+        <p>Text SUMMARIZER</p>
+        <p>Our tool uses advanced algorithms to condense your text while retaining its core essence.</p>
+        <img src="{{ url_for('static', filename='products/text.jpeg') }}" alt="Text Summarizer" class="img-fluid mt-3" style="border-radius: 10px; max-width: 90%; height: 250px;">
+        <a href="{{ url_for('home') }}" class="btn btn-primary mt-4 btn-lg" role="button">Sentiment Analysis Tool</a>
+
+    </div>
+
+    <!-- Right Section -->
+    <div class="split-right p-5">
+        <h3 class="mb-4">Enter Text to Summarize</h3>
+        <form method="post" class="mt-4">
+            <textarea name="text" class="form-control mb-3" rows="6" placeholder="Paste your text here..."></textarea>
+            <input type="submit" value="Summarize" class="btn btn-warning">
+        </form>
+        <div class="comment-box mt-4">
+            <h5>Summary:</h5>
+            {% if summary %}
+                <div class="comment bg-white p-3 mt-2">
+                    <strong>Summarized Text:</strong><br>
+                    {{ summary }}
+                </div>
+            {% else %}
+                <p class="text-muted">No summary available yet. Submit text to generate a summary.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

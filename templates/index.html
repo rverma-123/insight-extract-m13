@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="container-fluid d-flex align-items-center vh-100">
+    <!-- Left Section -->
+    <div class="split-left text-center d-flex flex-column justify-content-center align-items-center p-4">
+        <h1 class="font-weight-bold" style="font-family: 'Georgia', serif;">INSIGHT EXTRACT</h1>
+        <!-- <button class="btn btn-success mb-3">SERVED WITH LOVE</button> -->
+        <p>Sentiment Analysis Tool</p>
+        <p>Gain actionable insights that help improve services, track trends, and make informed business decisions—all in real time.</p>
+        <img src="{{ url_for('static', filename='products/text.jpeg') }}" alt="Dish Image" class="img-fluid mt-3" 
+             style="border-radius: 10px; max-width: 50%; height: 250px;">
+        <!-- Rectangular Button -->
+        <a href="{{ url_for('text_summarizer') }}" class="btn btn-primary mt-4 btn-lg" role="button">Text Summarizer</a>
+
+    </div>
+
+    <!-- Right Section -->
+    <div class="split-right p-5">
+        <h3 class="mb-4">Tap into the power of customer feedback!</h3>
+        <p>
+            We value your feedback! Share your experience with us to help us grow.
+        </p>
+        <form method="post" class="mt-4">
+            <textarea name="text" class="form-control mb-3" rows="4" placeholder="Write your review here..."></textarea>
+            <input type="submit" value="Submit" class="btn btn-warning">
+        </form>
+        <div class="comment-box mt-4">
+            <h5>Feedbacks:</h5>
+            {% if results %}
+                {% for feedback, sentiment, message in results %}
+                <div class="comment bg-white p-3 mt-2">
+                    <strong>Review:</strong> {{ feedback }}<br>
+                    <strong>Sentiment:</strong> {{ sentiment }}<br>
+                    <strong>Message:</strong> {{ message }}
+                </div>
+                {% endfor %}
+            {% else %}
+                <p class="text-muted">No feedbacks yet. Be the first to share your thoughts!</p>
+            {% endif %}
+        </div>
+        
+    </div>
+</div>
+</body>
+</html>
+

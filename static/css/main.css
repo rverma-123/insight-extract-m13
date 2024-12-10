@@ -1,0 +1,96 @@
+/* General Styles */
+body {
+    background-color: #f5e8d3 !important;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Split Sections */
+.split-left {
+    width: 40%;
+    background-color: transparent; /* Inherit the body background color */
+    text-align: center;
+}
+
+.split-right {
+    width: 60%;
+    background-color: transparent; /* Inherit the body background color */
+    padding: 20px;
+}
+
+/* Text Area Styling */
+textarea {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #ffffff; /* White background for the text area */
+    color: #333;
+}
+
+/* Comment Box */
+.comment {
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* White background for comments */
+    padding: 10px;
+}
+
+/* Primary Button Styling */
+.btn-primary {
+    background-color: #5cb85c; /* Green button color */
+    border-color: #4cae4c;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #4cae4c;
+    color: #ffffff;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Warning Button Styling */
+.btn-warning {
+    background-color: #f0ad4e; /* Warning button color */
+    border-color: #eea236;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-warning:hover {
+    background-color: #ec971f;
+    color: #ffffff;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Additional Styles */
+.container-fluid {
+    height: 100vh; /* Ensure the container fills the viewport */
+}
+
+img {
+    border-radius: 10px;
+    max-width: 90%;
+    height: 250px;
+}
+
+h1 {
+    font-family: 'Georgia', serif;
+}
+
+h3, p {
+    color: #333; /* Consistent text color */
+}
